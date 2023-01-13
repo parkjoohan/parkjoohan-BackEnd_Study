@@ -15,7 +15,7 @@ public class ServletApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ServletApplication.class, args);
 	}
-	
+
 	// ViewResolver가 나타나기 전에 사용되던 방식
 	//	@Bean
 	//	ViewResolver internalResourceViewResolver() {
