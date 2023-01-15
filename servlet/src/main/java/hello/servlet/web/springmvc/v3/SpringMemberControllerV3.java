@@ -37,7 +37,7 @@ public class SpringMemberControllerV3 {
     }
 
 
-    @GetMapping 
+    @GetMapping
     //@RequestMapping(method = RequestMethod.GET)
     public String members(Model model) {
         List<Member> members = memberRepository.findAll();
