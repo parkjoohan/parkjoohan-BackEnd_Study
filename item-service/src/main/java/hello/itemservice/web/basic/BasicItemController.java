@@ -39,7 +39,7 @@ public class BasicItemController {
     }
 
     // 상품 등록
-    @PostMapping("/add")
+//    @PostMapping("/add")
     public String addItemV1(
             @RequestParam String itemName,
             @RequestParam int price,
@@ -66,15 +66,21 @@ public class BasicItemController {
         return "basic/item";
     }
 
+//    @PostMapping("/add")
     public String addItemV3(@ModelAttribute Item item) {
         itemRepository.save(item);
         return "basic/item";
     }
 
-
+//    @PostMapping("/add")
     public String addItemV4(Item item) {
         itemRepository.save(item);
         return "basic/item";
+    }
+    @PostMapping("/add")
+    public String addItemV5(Item item) {
+        itemRepository.save(item);
+        return "redirect:/basic/items/" + item.getId();
     }
 
     // 상품 수정 폼 보여주기
@@ -86,7 +92,7 @@ public class BasicItemController {
         return "basic/editForm";
     }
 
-    // 상품 수정, 상품 저장
+    // 상품 수정, 상품 저장 (PRG 형식, Post/Redirect/Get)
     @PostMapping("/{itemId}/edit")
     public String edit(@PathVariable Long itemId, @ModelAttribute Item item) {
         itemRepository.update(itemId, item);
