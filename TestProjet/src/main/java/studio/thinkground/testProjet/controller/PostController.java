@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 import studio.thinkground.testProjet.dto.MemberDTO;
 
 import java.util.Map;
-import java.util.Objects;
 
 @RestController
 @RequestMapping("/api/v1/post-api")
