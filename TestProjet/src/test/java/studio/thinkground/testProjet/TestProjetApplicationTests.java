@@ -1,4 +1,4 @@
-package com.example.TestProjet;
+package studio.thinkground.testProjet;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

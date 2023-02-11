@@ -1,4 +1,4 @@
-package com.example.TestProjet;
+package studio.thinkground.testProjet;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
