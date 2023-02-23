@@ -51,12 +51,28 @@ public class UserController {
 
     @PutMapping("/user")
     public void updateUser(@RequestBody UserUpdateRequest request) {
+        String readSql = "SELECT * FROM user WHERE id = ?";
+        // request.getId가 ?에 들어가게 되고 SELECT SQL 결과가 있으면 0으로 변환 (최종적으로 List로 반환)
+        // 결론적으로 해당 id를 가진 유저가 있으면 0이 담긴 List가 반환
+        // 없다면 빈 List가 반환
+        boolean isUserNotExist = jdbcTemplate.query(readSql, (rs, rowNum) -> 0, request.getId()).isEmpty();
+        // 유저가 존재하지 않을 때 오루 발생
+        if(isUserNotExist) {
+            throw new IllegalArgumentException();
+        }
+
         String sql = "UPDATE user SET name = ? WHERE id = ?";
         jdbcTemplate.update(sql, request.getName(), request.getId());
     }
 
     @DeleteMapping("/user")
     public void deleteUser(@RequestParam String name) {
+        String readSql = "SELECT * FROM user WHERE name = ?";
+        boolean isUserNotExist = jdbcTemplate.query(readSql, (rs, rowNum) -> 0, name).isEmpty();
+        if(isUserNotExist) {
+            throw new IllegalArgumentException();
+        }
+
         String sql = "DELETE FROM user WHERE name = ?";
         jdbcTemplate.update(sql, name);
     }
