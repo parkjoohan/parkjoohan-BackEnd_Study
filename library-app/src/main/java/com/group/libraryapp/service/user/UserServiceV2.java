@@ -36,7 +36,18 @@ public class UserServiceV2 {
         User user = userRepository.findById(request.getId())
                 .orElseThrow(IllegalAccessError::new);      // User가 없다면 예외 던진다.
 
-        user.updateName(request.getName());         // 객체를 없데이트 후, save 호출 -> 자동으로 Update SQL 진행 
+        user.updateName(request.getName());         // 객체를 없데이트 후, save 호출 -> 자동으로 Update SQL 진행
         userRepository.save(user);
+    }
+
+    public void deleteUser(String name) {
+        // SELECT * FROM user WHERE name = ?
+        User user = userRepository.findByName(name);
+
+        if(user == null) {
+            throw new IllegalArgumentException();
+        }
+
+        userRepository.delete(user);
     }
 }
