@@ -51,7 +51,7 @@ public class UserJdbcRepository {
 
     public boolean isUserNotExist(long id) {
         String readSql = "SELECT * FROM user WHERE id = ?";
-        // request.getId가 ?에 들어가게 되고 SELECT SQL 결과가 있으면 0으로 변환 (최종적으로 List로 반환)
+        // request2.getId가 ?에 들어가게 되고 SELECT SQL 결과가 있으면 0으로 변환 (최종적으로 List로 반환)
         // 결론적으로 해당 id를 가진 유저가 있으면 0이 담긴 List가 반환
         // 없다면 빈 List가 반환
         return jdbcTemplate.query(readSql, (rs, rowNum) -> 0, id).isEmpty();

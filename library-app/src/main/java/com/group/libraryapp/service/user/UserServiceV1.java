@@ -19,22 +19,22 @@ public class UserServiceV1 {
 //        this.userJdbcRepository = userJdbcRepository;
 //    }
 //
-//    public void saveUser(UserCreateRequest request) {
-//        userJdbcRepository.saveUser(request.getName(), request.getAge());
+//    public void saveUser(UserCreateRequest request2) {
+//        userJdbcRepository.saveUser(request2.getName(), request2.getAge());
 //    }
 //
 //    public List<UserResponse> getUsers() {
 //        return userJdbcRepository.getUsers();
 //    }
 //
-//    public void updateUser(UserUpdateRequest request) {
+//    public void updateUser(UserUpdateRequest request2) {
 //        // 유저가 존재하지 않을 때 오루 발생
-//        if(userJdbcRepository.isUserNotExist(request.getId())) {
+//        if(userJdbcRepository.isUserNotExist(request2.getId())) {
 //            throw new IllegalArgumentException();
 //        }
 //
 //        // db 연결하여 이름 업데이트
-//        userJdbcRepository.updateUserName(request.getName(), request.getId());
+//        userJdbcRepository.updateUserName(request2.getName(), request2.getId());
 //    }
 //
 //    public void deleteUser(String name) {
