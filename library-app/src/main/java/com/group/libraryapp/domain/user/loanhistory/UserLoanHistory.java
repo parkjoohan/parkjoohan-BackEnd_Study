@@ -19,10 +19,15 @@ public class UserLoanHistory {
     private boolean isReturn;
 
     protected UserLoanHistory() {}
-    
+
     public UserLoanHistory(long userId, String bookName) {
         this.userId = userId;
         this.bookName = bookName;
         this.isReturn = false;
+    }
+
+    // 반납 처리
+    public void doReturn() {
+        this.isReturn = true;
     }
 }

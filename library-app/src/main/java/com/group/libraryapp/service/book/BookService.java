@@ -8,6 +8,7 @@ import com.group.libraryapp.domain.user.loanhistory.UserLoanHistory;
 import com.group.libraryapp.domain.user.loanhistory.UserLoanHistoryRepository;
 import com.group.libraryapp.dto.book.request.BookCreateRequest;
 import com.group.libraryapp.dto.book.request.BookLoanRequest;
+import com.group.libraryapp.dto.book.request.BookReturnRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -43,5 +44,20 @@ public class BookService {
         User user = userRepository.findByName(request.getUserName()).orElseThrow(IllegalArgumentException::new);
         // 5. 유저 정보와 책 정보를 기반으로 UserLoanHistory를 저장
         userLoanHistoryRepository.save(new UserLoanHistory(user.getId(), book.getName()));
+    }
+
+    @Transactional
+    public void returnBook(BookReturnRequest request) {
+        // 1. userName을 활용하여 userId를 찾아와야 한다.
+        User user = userRepository.findByName(request.getUserName())
+                .orElseThrow(IllegalArgumentException::new);
+
+        //2. userId와 userName을 통해 대출 기록을 찾는다.
+        UserLoanHistory history = userLoanHistoryRepository.findByUserIdAndBookName(user.getId(), request.getBookName())
+                .orElseThrow(IllegalArgumentException::new);
+        history.doReturn();
+
+        // 아래 코드는 없어도 된다. => @Transactional annotation은 영속성 함수를 가지고 있어 변경되는 내용에 대해서 자동 업데이트
+        // userLoanHistoryRepository.save(history);
     }
 }
