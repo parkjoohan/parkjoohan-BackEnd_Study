@@ -13,8 +13,14 @@ repositories {
 }
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'mysql:mysql-connector-java' // (추가된부분)
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // (추가된부분)
+	// https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
+	implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.0.31'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
