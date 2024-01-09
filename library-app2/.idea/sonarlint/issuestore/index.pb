@@ -11,3 +11,5 @@ v
 Fsrc/main/java/com/group/libraryapp/dto/user/response/UserResponse.java,d\2\d2ee85fce43251a0b6f2831627ff74d7e657d39e
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+z
+Jsrc/main/java/com/group/libraryapp/dto/user/request/UserUpdateRequest.java,8\f\8f49bd4e5b5906feffb514133521230e216b3133
