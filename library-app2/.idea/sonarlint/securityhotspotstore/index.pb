@@ -17,3 +17,15 @@ p
 @src/main/java/com/group/libraryapp/service/user/UserSerivce.java,8\a\8a21e23107a02e382ecda557b4522bd20e90cf1a
 v
 Fsrc/main/java/com/group/libraryapp/repository/user/UserRepository.java,f\0\f015d93f938f85661b017125eb45d31a30f0c506
+p
+@src/main/java/com/group/libraryapp/service/book/BookService.java,b\a\bab4acfa7cff59d8f84f6ccdae476a4ca04e2c7b
+v
+Fsrc/main/java/com/group/libraryapp/controller/book/BookController.java,d\4\d4116185121c422519e507d013575c02067b7dc7
+|
+Lsrc/main/java/com/group/libraryapp/repository/book/BookMemoryRepository.java,2\e\2e36585247357ce28b33297066c86b7274960edd
+{
+Ksrc/main/java/com/group/libraryapp/repository/book/BookMySqlRepository.java,5\f\5f6d1f75bf8011a8089d9ad198988b2301db47f1
+v
+Fsrc/main/java/com/group/libraryapp/repository/book/BookRepository.java,b\2\b24d66c9449f859943f7e8966029306513ed7b07
+p
+@src/main/java/com/group/libraryapp/config/UserConfiguration.java,b\d\bd6f67d0c829225f5a1b99a7d1068347bf5df8c2
