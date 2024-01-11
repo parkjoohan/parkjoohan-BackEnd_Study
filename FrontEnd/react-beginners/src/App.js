@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Cleanup from './Cleanup';
 
 function App() {
   const [counter, setCounter] = useState(0);
@@ -12,7 +13,7 @@ function App() {
     console.log("CALL THE API...");
   }, []);
   useEffect(() => {
-    if(keyword !== "" && keyword.length > 5)
+    if (keyword !== "" && keyword.length > 5)
       console.log("SEARCH FOR ", keyword);
   }, [keyword]);
 
@@ -22,6 +23,8 @@ function App() {
       <input value={keyword} onChange={onChange} type="text" placeholder="Search here..." />
       <h1>{counter}</h1>
       <button onClick={onClick}>click me</button>
+
+      <Cleanup />
     </div>
   );
 }
