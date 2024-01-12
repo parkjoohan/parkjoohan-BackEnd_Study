@@ -1,0 +1,26 @@
+{dummy.map((a, a1) => (
+          <li key={a1}>
+            {a[0]}
+            {a[1] !== 0
+              ? a[1].map((b, b1) => (
+                  <li key={b1} style={{ marginLeft: "20px" }}>
+                    {b[0]}
+                    {b[1] !== 0
+                      ? b[1].map((c, c1) => (
+                          <li key={c1} style={{ marginLeft: "40px" }}>
+                            {c[0]}
+                            {c[1] !== 0
+                              ? c[1].map((d, d1) => (
+                                  <li key={d1} style={{ marginLeft: "60px" }}>
+                                    {d[0]}
+                                  </li>
+                                ))
+                              : null}
+                          </li>
+                        ))
+                      : null}
+                  </li>
+                ))
+              : null}
+          </li>
+        ))}
